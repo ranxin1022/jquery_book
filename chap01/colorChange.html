@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+        .blue{
+            width:100px;
+            height:100px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<script>
+    window.onload = function(){
+        var box = document.getElementById("box");
+        box.addEventListener("click", function(){
+            toBlue(this);
+        }, false);
+        /*
+        box.onclick = function(){
+            toBlue(box);
+        };
+        */
+    };
+
+    function toRed(object){
+        object.className = 'red';
+        object.addEventListener("click", function(){
+            toBlue(object);
+        });
+    }
+
+    function toBlue(object){
+        object.className= 'blue';
+        object.addEventListener("click", function(){
+            toRed(object);
+        });
+    }
+
+    window.addEventListener("load", function(){
+        alert("rachel");
+    })
+
+    window.event.srcElement
+    event.target;
+</script>
+<body>
+
+<div id="box" class="red">display div</div>
+</body>
+</html>

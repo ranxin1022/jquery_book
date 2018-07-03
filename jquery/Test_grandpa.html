@@ -1,0 +1,165 @@
+作者：玲珑邪僧
+链接：https://zhuanlan.zhihu.com/p/22058336
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>玲珑邪僧</title>
+    <style type="text/css">
+        #canvas{
+            background-color:#E8E5E5;
+
+        }
+    </style>
+</head>
+
+<body>
+<canvas id="canvas">
+    如果你到这行字，说明你的浏览器已经被我帅得不支持canvas了。
+</canvas>
+</body>
+
+<script>
+    window.onload = function(){
+
+        var canvas = document.getElementById("canvas");
+        canvas.width = 1500;
+        canvas.height = 800;
+
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(150,250);
+        context.lineTo(150,300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(550,250);
+        context.lineTo(550,300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(550,275);
+        context.lineTo(600,270);
+        context.lineCap = "round";
+        context.lineTo(650,275);
+        context.closePath();
+        context.lineWidth =18;
+        context.lineCap = "round";
+        context.strokeStyle = "#393636";
+        context.stroke();
+
+        drawArcTo(context, 200, 200, 550, 200, 550, 250, 50);
+        drawArcTo(context, 500, 200, 150, 200, 150, 250, 50);
+        drawArcTo(context, 450, 400, 150, 400, 150, 150, 110);
+        drawArcTo(context, 250, 400, 550, 400, 550, 150, 110);
+
+        context.save();
+        context.translate(500,0);
+        context.beginPath();
+        context.moveTo(150,250);
+        context.lineTo(150,300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(550,250);
+        context.lineTo(550,300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+        drawArcTo(context, 200, 200, 550, 200, 550, 250, 50);
+        drawArcTo(context, 500, 200, 150, 200, 150, 250, 50);
+        drawArcTo(context, 450, 400, 150, 400, 150, 150, 110);
+        drawArcTo(context, 250, 400, 550, 400, 550, 150, 110);
+        context.restore();
+
+
+        context.save();
+        context.translate(90,40);
+        context.lineWidth = 12;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.moveTo(161, 247);
+        context.bezierCurveTo(208, 309, 221, 158, 349, 258);
+        context.stroke();
+        context.restore();
+
+        context.save();
+        context.translate(590,40);
+        context.lineWidth = 12;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.moveTo(152, 262);
+        context.bezierCurveTo(180, 236, 226, 182, 349, 258);
+        context.stroke();
+        context.restore();
+
+        context.save();
+        context.translate(238,220);
+        context.lineWidth = 14;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.arc(100,75,15,0,2*Math.PI);
+        context.strokeStyle="black";
+        context.stroke();
+        context.restore();
+
+        context.save();
+        context.translate(700,215);
+        context.lineWidth = 14;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.arc(100,75,15,0,2*Math.PI);
+        context.strokeStyle="black";
+        context.stroke();
+        context.restore();
+
+        context.save();
+        context.translate(460,375);
+        context.lineWidth = 14;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.arc(100,75,5,0,2*Math.PI);
+        context.strokeStyle="black";
+        context.stroke();
+        context.restore();
+
+        context.save();
+        context.translate(550,375);
+        context.lineWidth = 14;
+        context.strokeStyle = "#333";
+        context.beginPath();
+        context.arc(100,75,5,0,2*Math.PI);
+        context.strokeStyle="black";
+        context.stroke();
+        context.restore();
+
+    }
+
+    function drawArcTo(cxt, x0, y0, x1, y1, x2, y2, r){
+        cxt.beginPath();
+        cxt.moveTo(x0, y0);
+        cxt.arcTo(x1, y1, x2, y2, r);
+
+        cxt.lineWidth = 8;
+        cxt.strokeStyle = "#1E1D1D";
+        cxt.stroke();
+
+        cxt.beginPath();
+        cxt.moveTo(x0, y0);
+        cxt.lineTo(x1, y1);
+        cxt.lineTo(x2, y2);
+    }
+
+</script>
+
+</html>

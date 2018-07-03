@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这是我的第一个程序</title>
+</head>
+<body>
+    <script>
+        //alert("test");
+        //(function f(f){alert(typeof f());})(function(){return 1;});
+        var y = 1, x = y = typeof x;
+        //alert(x);
+        (function(x){
+            delete x;
+           // alert(x);
+        })(1);
+        var f = function g(){return 23};
+        alert(f);
+        //alert(typeof g);
+        (function(){
+          // alert( typeof arguments);
+        })();
+
+        // 普通函数
+        function box(){
+            return 'Lee';
+        }
+
+        //alert(box());
+
+        // 匿名函数
+        function (){
+            return 'Lee';
+        }
+
+    </script>
+</body>
+</html>

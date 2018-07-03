@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas">
+    如果你到这行字，说明你的浏览器已经被我帅得不支持canvas了。
+</canvas>
+</body>
+
+<script>
+    window.onload = function() {
+
+        var canvas = document.getElementById("canvas");
+        canvas.width = 1500;
+        canvas.height = 800;
+
+        var context = canvas.getContext("2d");
+
+        //左边眼镜的左侧竖线
+        context.beginPath();
+        context.moveTo(150, 250);
+        context.lineTo(150, 300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+
+        //两个眼镜片中间的连接架
+        context.beginPath();
+        context.moveTo(550,275);
+        context.lineTo(600,270);
+        context.lineCap = "round";
+        context.lineTo(650,275);
+        context.closePath();
+        context.lineWidth =18;
+        //context.lineCap = "round";
+        context.strokeStyle = "#393636";
+        context.stroke();
+         context.lineCap = "butt";
+
+        //左边眼镜的右侧竖线
+        context.beginPath();
+        context.moveTo(550,250);
+        context.lineTo(550,300);
+        context.lineWidth = 8;
+        context.strokeStyle = "#795A5A";
+        context.stroke();
+
+
+    };
+</script>
+</html>

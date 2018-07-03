@@ -1,0 +1,67 @@
+
+.red {
+    color : red;
+}
+
+.green{
+    color : green;
+}
+
+.bg {
+    background-color: aqua;
+}
+
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: absolute
+}
+
+#pox{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: absolute;
+    top: 150px;
+}
+
+.test{
+   padding: 5px;
+    margin-right: 5px;
+    background: orange;
+    float: left;
+    display: none;
+}
+
+div#expander{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.loading{
+    display: none;
+    color: red;
+    font-size: 20px;
+}
+
+.list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size:13px;
+    color:#fff;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.list li{
+    float: left;
+    width:100px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    background: #333333;
+    cursor: pointer;
+}

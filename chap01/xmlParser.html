@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var xmlParser = new DOMParser();
+        var xmlStr = '<root>' +
+                     '<user id="5"><email>123</email><name>heheh</name></user>' +
+                     '<user id="6"><email>456</email><name>coco</name></user>' +
+                     '</root>';
+
+        var xmlDom = xmlParser.parseFromString(xmlStr, "text/xml");
+       // alert(xmlDom.getElementsByTagName('email')[0].firstChild.nodeValue);
+
+        var serializer = new XMLSerializer();
+        var xml = serializer.serializeToString(xmlDom);
+        //alert(xml);
+
+        //var eva = new XPathEvaluator();
+        //var result = eva.evaluate('root/user[1]', xmlDom, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+        var result = xmlDom.evaluate('root/user', xmlDom, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+        alert(serializer.serializeToString(result.iterateNext()));
+        if(result != null)
+        {
+            alert(serializer.serializeToString(result.singleNodeValue));
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

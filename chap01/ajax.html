@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="my.js"></script>
+    <script>
+
+        function createXMLHttpReq(){
+            if(typeof XMLHttpRequest != 'undefined'){
+                return new XMLHttpRequest();
+            }else if(typeof ActiveXObject != 'undefined'){
+                var version = ['MSXML2.XMLHttp.6.0',
+                               'MSXML2.XMLHttp.3.0',
+                               'MSXML2.XMLHttp'];
+
+                for(var i = 0;version.length;i++){
+                    try{
+                        return new ActiveXObject(version[i]);
+                    }catch (e){
+                        // 跳过
+                    }
+                }
+            }else{
+                throw new Error('您的系统或浏览器不支持XHR对象');
+            }
+        }
+
+        //alert(xhr);
+        document.addEventListener('click', function(){
+            var xhr = createXMLHttpReq();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200)
+                {
+                   // alert(xhr.getAllResponseHeaders());
+                    //alert(xhr.getResponseHeader('Content-Type'));
+                    //alert(xhr.responseText);
+                    var box = JSON.parse(xhr.responseText);
+                    alert(box);
+                    console.log("hehe");
+                }
+            };
+            //xhr.open('post', 'demo.php', false);
+            //xhr.send("user=123");
+
+            var url = 'demo.json?rand=' + Math.random();
+
+            xhr.open('get', url, true);
+            xhr.setRequestHeader('myheader','hehe');
+            xhr.send(null);
+
+        });
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

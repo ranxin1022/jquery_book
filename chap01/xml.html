@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //var xmlDom = new ActiveXObject('MSXML2.DOMDocument');
+        //alert(xmlDom);
+
+
+        function createXMLDom(){
+            var version = ['MSXML2.DOMDocument6.0',
+                           'MSXML2.DOMDocument3.0',
+                           'MSXML2.DOMDocument'];
+
+            for(var i = 0; i<version.length;i++){
+                var xmlDom = new ActiveXObject(version[i]);
+                return xmlDom;
+            }
+        }
+        //var xmlDom = createXMLDom();
+        //alert(xmlDom);
+
+
+        //DOM2级XML
+        var xmlDom = document.implementation.createDocument('', 'root',null);
+        //var user = xmlDom.createElement('user');
+        //xmlDom.getElementsByTagName('root')[0].appendChild(user);
+
+        //xmlDom.async = false;
+        xmlDom.addEventListener("load", function(){
+            alert(xmlDom.getElementsByTagName("email")[0].firstChild.nodeValue);
+            alert(xmlDom.getElementsByTagName("email")[0].textContent);
+
+        });
+        xmlDom.load("user.xml");
+
+        //DOM2级没有.xml属性来序列化xml的
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
